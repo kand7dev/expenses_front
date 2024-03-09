@@ -12,13 +12,17 @@ export const GetExpenses = async (dispatch) => {
       {
         id: 1,
         description: "Groceries",
-        ammount: 23.16,
+        amount: 23.16,
+      },
+      {
         id: 2,
         description: "Gas",
-        ammount: 18.52,
+        amount: 18.52,
+      },
+      {
         id: 3,
         description: "Student Loans",
-        ammount: 600,
+        amount: 600,
       },
     ];
     dispatch(ActionCreators.setExpenses(expenses));
