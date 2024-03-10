@@ -1,7 +1,7 @@
 # Special-Topics-in-Software-Engineering
 This is a To-Do List application created by me, Antonisvar and kand7dev for a university project in the course of Special Topics in Software Engineering.
 
-Description:
+## Description:
 We will have to design and develop a business application of CRUD type, three levels (front-end, business logic, database) on a small scale. By "small scale" we mean that it is not necessary to deal with all possible functions of such an application but to select 3-4 of those that are important, at your discretion. After all, the aim of the task is not is not only the software to be produced but also the development methodology.
 
 ## A. Development Methodology
