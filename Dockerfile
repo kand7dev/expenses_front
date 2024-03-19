@@ -2,11 +2,11 @@ FROM node:latest
 
 WORKDIR /app/
 
-COPY /expenses_front/public /app/public/
+COPY /public /app/public/
 
-COPY /expenses_front/src /app/src
+COPY /src /app/src
 
-COPY expenses_front/package.json /app
+COPY /package.json /app
 
 RUN npm install
 
