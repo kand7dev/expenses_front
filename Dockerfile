@@ -2,6 +2,8 @@ FROM node:latest
 
 WORKDIR /app/
 
+EXPORT 3000
+
 COPY /public /app/public/
 
 COPY /src /app/src
