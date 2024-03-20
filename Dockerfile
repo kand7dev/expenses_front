@@ -2,7 +2,7 @@ FROM node:latest
 
 WORKDIR /app/
 
-EXPORT 3000
+EXPOSE 3000
 
 COPY /public /app/public/
 
