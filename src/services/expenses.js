@@ -26,7 +26,8 @@ export const NewExpense = async (dispatch, expense) => {
     // API call happens here.
     // Pollting with hard-coded data for now.
     // dispatch is used to trigger a state change. expenses[] will be stored in our state afte dispatch.
-    dispatch(ActionCreators.newExpense({ id: 10, description: expense.description, amount: expense.amount }));
+    const { data } = await axiosInstance.post("", expense);
+    dispatch(ActionCreators.newExpense(data));
   } catch {
     console.log("Error!");
   }
