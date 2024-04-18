@@ -14,8 +14,8 @@ export const GetExpenses = async (dispatch) => {
     // API call happens here.
     // Pollting with hard-coded data for now.
     // dispatch is used to trigger a state change. expenses[] will be stored in our state afte dispatch.
-    // const { data } = await axiosInstance.get();
-    // dispatch(ActionCreators.setExpenses(data));
+    const { data } = await axiosInstance.get();
+    dispatch(ActionCreators.setExpenses(data));
   } catch {
     console.log("Error");
   }
