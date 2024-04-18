@@ -3,8 +3,7 @@ import axios from "axios";
 
 const axiosInstance = axios.create({
   baseURL: "http://localhost:5110/Expenses",
-
-})
+});
 
 // Responsible for making HTTP requests.
 // HTTP Methods will happen here.
@@ -31,24 +30,24 @@ export const NewExpense = async (dispatch, expense) => {
   } catch {
     console.log("Error!");
   }
-}
+};
 
 export const EditExpense = async (dispatch, expense) => {
   try {
     //api call
-    await axiosInstance.put("", expense)
+    await axiosInstance.put("", expense);
     dispatch(ActionCreators.editExpense(expense));
   } catch (error) {
     console.log("Error!");
   }
-}
+};
 
 export const DeleteExpense = async (dispatch, expense) => {
   try {
     //api call
-    await axiosInstance.delete("",expense);
+    await axiosInstance.delete("", { data: { ...expense } });
     dispatch(ActionCreators.deleteExpense(expense));
   } catch (error) {
     console.log("Error!");
   }
-}
+};
