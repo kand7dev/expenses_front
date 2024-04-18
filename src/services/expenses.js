@@ -46,6 +46,7 @@ export const EditExpense = async (dispatch, expense) => {
 export const DeleteExpense = async (dispatch, expense) => {
   try {
     //api call
+    await axiosInstance.delete("",expense);
     dispatch(ActionCreators.deleteExpense(expense));
   } catch (error) {
     console.log("Error!");
