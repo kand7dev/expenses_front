@@ -6,35 +6,39 @@ import ExpenseForm from "./ExpenseForm";
 
 const ExpenseList = () => {
   const dispatch = useDispatch();
-  const expenses = useSelector(state => state.expensesReducer.expenses);
+  const expenses = useSelector((state) => state.expensesSlice.expenses);
 
   useEffect(() => {
     GetExpenses(dispatch);
   }, [dispatch]);
 
-  return expenses.map((e) =>
+  return expenses.map((e) => (
     <div key={e.id} style={{ marginBottom: "1rem" }}>
       <ListRow expense={e} />
     </div>
-  );
-}
+  ));
+};
 
 const ListRow = ({ expense }) => {
   const [isEditing, setIsEditing] = useState(false);
 
-  return isEditing
-    ? <ExpenseForm expense={expense} setIsEditing={setIsEditing} />
-    : < div >
+  return isEditing ? (
+    <ExpenseForm expense={expense} setIsEditing={setIsEditing} />
+  ) : (
+    <div>
       <Row>
         <Col>{expense.description}</Col>
         <Col>{expense.amount}</Col>
       </Row>
       <br />
       <Container className="d-flex justify-content-end">
-        <Button variant="warning" onClick={() => setIsEditing(!isEditing)}>Edit</Button>
+        <Button variant="warning" onClick={() => setIsEditing(!isEditing)}>
+          Edit
+        </Button>
       </Container>
       <hr />
-    </div >
-}
+    </div>
+  );
+};
 
 export default ExpenseList;
