@@ -36,6 +36,7 @@ export const NewExpense = async (dispatch, expense) => {
 export const EditExpense = async (dispatch, expense) => {
   try {
     //api call
+    await axiosInstance.put("", expense)
     dispatch(ActionCreators.editExpense(expense));
   } catch (error) {
     console.log("Error!");
