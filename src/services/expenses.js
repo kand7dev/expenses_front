@@ -11,7 +11,7 @@ import {
 import axios from "axios";
 
 const axiosInstance = axios.create({
-  baseURL: "http://localhost:5110/Expenses",
+  baseURL: `${process.env.REACT_APP_BASE_URL}/Expenses`
 });
 
 // Responsible for making HTTP requests.

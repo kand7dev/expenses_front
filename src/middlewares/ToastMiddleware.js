@@ -23,6 +23,7 @@ const ToastMiddleware = () => next => action => {
             break;
         case deleteExpensesError.type:
             toast.error("Error deleting expense!")
+            break;
         default:
             break;
     }

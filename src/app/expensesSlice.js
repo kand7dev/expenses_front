@@ -1,5 +1,4 @@
 import { createSlice, createAction } from "@reduxjs/toolkit";
-import { toast } from "react-toastify";
 
 export const setExpensesError = createAction("setExpensesError")
 export const newExpenseError = createAction("newExpensesError")
