@@ -2,7 +2,7 @@ import { useState } from "react";
 import { FormControl, InputGroup, Form, Button } from "react-bootstrap"
 import { SignIn } from "../services/authentication";
 import { useDispatch } from "react-redux";
-
+import ThirdPartySignIns from "./ThirdPartySignIns"
 
 
 const SignInPage = () => {
@@ -24,6 +24,7 @@ const SignInPage = () => {
             </InputGroup>
             <Button type="submit" variant="primary" style={{ margin: "auto", display: "block", width: "10rem" }}>Sign In</Button>
         </Form>
+        <ThirdPartySignIns />
     </div >
 };
 
