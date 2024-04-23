@@ -4,9 +4,9 @@ import {
   editExpense,
   deleteExpense,
   setExpensesError,
-  editExpensesError,
+  editExpenseError,
   newExpenseError,
-  deleteExpensesError
+  deleteExpenseError
 } from "../app/expensesSlice";
 import axios from "axios";
 
@@ -53,7 +53,7 @@ export const EditExpense = async (dispatch, expense) => {
     await axiosInstance.put("", expense);
     dispatch(editExpense(expense));
   } catch (error) {
-    dispatch(editExpensesError())
+    dispatch(editExpenseError())
   }
 };
 
@@ -63,6 +63,6 @@ export const DeleteExpense = async (dispatch, expense) => {
     await axiosInstance.delete("", { data: { ...expense } });
     dispatch(deleteExpense(expense));
   } catch (error) {
-    dispatch(deleteExpensesError())
+    dispatch(deleteExpenseError())
   }
 };

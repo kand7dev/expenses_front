@@ -1,9 +1,9 @@
 import { createSlice, createAction } from "@reduxjs/toolkit";
 
 export const setExpensesError = createAction("setExpensesError")
-export const newExpenseError = createAction("newExpensesError")
-export const editExpensesError = createAction("editExpensesError")
-export const deleteExpensesError = createAction("deleteExpensesError")
+export const newExpenseError = createAction("newExpenseError")
+export const editExpenseError = createAction("editExpenseError")
+export const deleteExpenseError = createAction("deleteExpenseError")
 
 export const expensesSlice = createSlice({
   name: "expenses",
@@ -18,13 +18,13 @@ export const expensesSlice = createSlice({
       return { ...state, expenses: [action.payload, ...state.expenses] };
     },
     editExpense: (state, action) => {
-      const expenses = state.expenses.map((expense) => {
+      const expenses = state.expenses.map(expense => {
         if (expense.id === action.payload.id) {
-          return action.payload;
+          expense = action.payload;
         }
         return expense;
       });
-      return { ...state, expenses: expenses };
+      return { ...state, expenses: [...expenses] };
     },
     deleteExpense: (state, action) => {
       const expenses = state.expenses.filter(

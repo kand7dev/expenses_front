@@ -1,14 +1,14 @@
-import { newExpense, editExpense, deleteExpense, setExpensesError, newExpenseError, editExpensesError, deleteExpensesError } from "../app/expensesSlice";
+import { newExpense, editExpense, deleteExpense, setExpensesError, newExpenseError, editExpenseError, deleteExpenseError } from "../app/expensesSlice";
 import { toast } from "react-toastify";
 
 const ToastMiddleware = () => next => action => {
-    switch(action.type){
+    switch (action.type) {
         case newExpense.type:
             toast.success("New expense added!")
             break;
         case editExpense.type:
-            toast.update("Expense updated!")
-            break
+            toast.success("Expense updated!")
+            break;
         case deleteExpense.type:
             toast.success("Expense deleted!")
             break;
@@ -18,10 +18,10 @@ const ToastMiddleware = () => next => action => {
         case newExpenseError.type:
             toast.error("Error adding an expense!")
             break;
-        case editExpensesError.type:
+        case editExpenseError.type:
             toast.error("Error editing expense!")
             break;
-        case deleteExpensesError.type:
+        case deleteExpenseError.type:
             toast.error("Error deleting expense!")
             break;
         default:
