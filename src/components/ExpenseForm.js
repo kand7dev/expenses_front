@@ -5,11 +5,11 @@ import { useDispatch } from "react-redux";
 
 const ExpenseForm = ({ expense, setIsEditing }) => {
   const descriptions = [
-    "groceries",
-    "rent",
-    "utilities",
-    "entertainment",
-    "other",
+    "Groceries",
+    "Rent",
+    "Utilities",
+    "Entertainment",
+    "Other",
   ];
   const [amount, setAmount] = useState(0);
   const [description, setDescription] = useState(descriptions[0]);
