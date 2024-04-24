@@ -28,7 +28,7 @@ const ListRow = ({ expense }) => {
     <div>
       <Row>
         <Col>{expense.description}</Col>
-        <Col>{expense.amount}</Col>
+        <Col>{expense.amount}€</Col>
       </Row>
       <br />
       <Container className="d-flex justify-content-end">
