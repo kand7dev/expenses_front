@@ -1,5 +1,6 @@
 import SignInPage from "./components/SignInPage";
 import SignUpPage from "./components/SignUpPage";
+import StatisticsPage from "./components/StatisticsPage";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import HomePage from "./components/HomePage";
@@ -26,6 +27,7 @@ const App = () => {
         <Route path="/" element={isLoggedIn ? <HomePage /> : <Navigate replace to="/signin" />} />
         <Route path="/signup" element={isLoggedIn ? <Navigate replace to="/" /> : <SignUpPage />} />
         <Route path="/signin" element={isLoggedIn ? <Navigate repalce to="/" /> : <SignInPage />} />
+        <Route path="/statistics" element={isLoggedIn ? <StatisticsPage /> : <Navigate replace to="/signin" />} />
         <Route path="*" element={<h2>Page not Found</h2>} />
       </Routes>
     </BrowserRouter>
