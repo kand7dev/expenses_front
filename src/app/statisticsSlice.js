@@ -1,16 +1,16 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 export const statisticsSlice = createSlice({
-    name: 'statistics',
+    name: "statistics",
     initialState: {
-        expensesAmountPerCategory: [],
+        expenseAmountPerCategory: []
     },
     reducers: {
         setExpenseAmountPerCategory: (state, action) => {
-            return {...state, expensesAmountPerCategory: [...action.payload] };
+            return { ...state, expenseAmountPerCategory: [...action.payload] }
         }
     }
-});
+})
 
 export const { setExpenseAmountPerCategory } = statisticsSlice.actions;
 
