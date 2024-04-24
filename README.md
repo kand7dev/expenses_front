@@ -24,7 +24,7 @@ The constraints we follow are
 (a) The front-end will communicate with the business logic using RESTful web services
 (b) The business logic is based on an object-oriented language programming language
 (c) The database must be relational and
-(d) The business logic must communicate with the database via ORM (Entity Framework) in our case.
+(d) The business logic must communicate with the database via ORM.
 
 
 ## Technologies Used
