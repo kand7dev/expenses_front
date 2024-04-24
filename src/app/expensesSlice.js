@@ -1,9 +1,10 @@
 import { createSlice, createAction } from "@reduxjs/toolkit";
 
-export const setExpensesError = createAction("setExpensesError")
-export const newExpenseError = createAction("newExpenseError")
-export const editExpenseError = createAction("editExpenseError")
-export const deleteExpenseError = createAction("deleteExpenseError")
+export const setExpensesError = createAction("setExpensesError");
+export const newExpenseError = createAction("newExpenseError");
+export const editExpenseError = createAction("editExpenseError");
+export const deleteExpenseError = createAction("deleteExpenseError");
+export const alreadyExists = createAction("alreadyExists");
 
 export const expensesSlice = createSlice({
   name: "expenses",
