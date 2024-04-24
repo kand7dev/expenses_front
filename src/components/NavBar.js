@@ -12,11 +12,11 @@ const Navbar = () => {
         {
             isLoggedIn
                 ?
-                <div  style={{display:'flex', alignItems:'center'}}>
-                    <NavLink style={{marginLeft: '1rem'}} variant='link' to='/'>Home</NavLink>
-                    <NavLink style={{marginLeft: '1rem'}} variant='link' to='/statistics'>Statistics</NavLink>
+                <div style={{ display: "flex", alignItems: "center" }}>
+                    <NavLink style={{ marginLeft: "1rem" }} variant="link" to="/">Home</NavLink>
+                    <NavLink style={{ marginLeft: "1rem" }} variant="link" to="/statistics">Statistics</NavLink>
                     <Button variant="link" href="/signin" onClick={() => dispatch(logout())}>Logout</Button>
-                </div> 
+                </div>
                 : <div style={{ display: "flex", marginRight: "50px" }}>
                     <NavLink to="/signup">Sign Up</NavLink>
                     <NavLink to="/signin" style={{ marginLeft: "1rem" }}>Sign In</NavLink>
