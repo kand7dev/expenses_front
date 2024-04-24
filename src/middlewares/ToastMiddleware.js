@@ -1,4 +1,5 @@
-import { newExpense, editExpense, deleteExpense, setExpensesError, newExpenseError, editExpenseError, deleteExpenseError, alreadyExists } from "../app/expensesSlice";
+import { newExpense, editExpense, deleteExpense, setExpensesError, newExpenseError, editExpenseError, deleteExpenseError } from "../app/expensesSlice";
+import { alreadyExists, invalidInputData } from "../app/authSlice";
 import { toast } from "react-toastify";
 
 const ToastMiddleware = () => next => action => {
@@ -26,6 +27,9 @@ const ToastMiddleware = () => next => action => {
             break;
         case alreadyExists.type:
             toast.error("User already exists!");
+            break;
+        case invalidInputData.type:
+            toast.error("Invalid username or password")
             break;
         default:
             break;
