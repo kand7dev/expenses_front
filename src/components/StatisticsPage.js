@@ -1,68 +1,51 @@
-import React from "react";
 import { Doughnut } from "react-chartjs-2";
 import { useDispatch, useSelector } from "react-redux";
 import { getExpensesPerCategory } from "../services/statistics";
 import { useEffect, useState } from "react";
-import {
-        Chart as ChartJS,
-        ArcElement,
-        Tooltip,
-        Legend
-        } 
-        from 'chart.js'
-
-ChartJS.register(ArcElement, Tooltip, Legend);
 
 const StatisticsPage = () => {
     const dispatch = useDispatch();
-    const expensesAmountPerCategory = useSelector(state =>
-        state.statisticsSlice.expensesAmountPerCategory);
+    const expenseAmountPerCategory = useSelector(state => state.statisticsSlice.expenseAmountPerCategory);
     const [doughnut, setDoughnut] = useState({
         labels: [],
         data: [],
     });
-const options = {
-}
 
     useEffect(() => {
         setDoughnut({
-            labels: expensesAmountPerCategory.map(x => x.Key),
-            data: expensesAmountPerCategory.map(x => x.Value),
+            labels: expenseAmountPerCategory.map(x => x.key),
+            data: expenseAmountPerCategory.map(x => x.value)
         })
-    }, [expensesAmountPerCategory]);
+
+    }, [expenseAmountPerCategory]);
 
     useEffect(() => {
-        getExpensesPerCategory(dispatch);
-    },);
+        getExpensesPerCategory(dispatch)
+    }, []); //eslint-disable-line react-hooks/exhaustive-deps
+
 
     const data = {
         labels: doughnut.labels,
         datasets: [{
             data: doughnut.data,
             backgroundColor: [
-                '#FF6384',
-                '#36A2EB',
-                '#FFCE56',
-                '#FF5733',
-                '#33FF57',
-                '#5733FF',
-                '#FF3357',
-                '#33FF57',
-                '#57FF33',
-                '#3357FF',
+                "#007BFF",
+                "#FF0000",
+                "#FFD700",
+                "#28A745",
+                "#FF00FF",
+                "#FF9900",
+                "#00FFFF",
+                "#D69AE5",
+                "#FF8F66",
+                "#00FF00"
             ]
         }]
-    }
-
-    return (
-        <div
-            style={{ maxWidth: '35rem', maxHeight: '35rem', margin: 'auto', textAlign: 'center'}}>
-            <h4 style={{marginTop: '10px'}}>Expenses per Category</h4>
-            <Doughnut
-                data={data}
-                options={options}
-            ></Doughnut >
-        </div>);
+    };
+    return <div hidden={!expenseAmountPerCategory || !expenseAmountPerCategory.length} style={{ maxWidth: "35rem", maxHeight: "35rem", margin: "auto", textAlign: "center" }}>
+        <h4 style={{ marginTop: "10px" }}>Expenses per Caregory</h4>
+        <Doughnut data={data} />
+    </div >
 };
 
 export default StatisticsPage;

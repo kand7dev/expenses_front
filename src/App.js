@@ -7,6 +7,7 @@ import HomePage from "./components/HomePage";
 import { useEffect } from "react";
 import { userAuthenticated } from "./app/authSlice";
 import Navbar from "./components/NavBar"
+import "chart.js/auto";
 
 
 const App = () => {
