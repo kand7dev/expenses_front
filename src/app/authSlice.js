@@ -1,5 +1,7 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createAction } from "@reduxjs/toolkit";
 
+export const alreadyExists = createAction("alreadyExists");
+export const invalidInputData = createAction("invalidInputData")
 
 export const authenticationSlice = createSlice({
     name: "authentication",
@@ -23,5 +25,5 @@ export const authenticationSlice = createSlice({
     }
 });
 
-export const {userAuthenticated, logout} = authenticationSlice.actions;
+export const { userAuthenticated, logout } = authenticationSlice.actions;
 export default authenticationSlice.reducer;
