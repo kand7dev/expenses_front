@@ -1,6 +1,6 @@
 import axios from "axios";
 import { userAuthenticated } from "../app/authSlice";
-import { alreadyExists } from "../app/expensesSlice";
+import { alreadyExists, invalidInputData } from "../app/authSlice";
 
 const axiosInstance = axios.create({
     baseURL: `${process.env.REACT_APP_BASE_URL}/Authentication`,
@@ -22,6 +22,7 @@ export const SignIn = async (dispatch, credentials) => {
         dispatch(userAuthenticated(data));
     } catch (error) {
         console.log(error.response.data)
+        dispatch(invalidInputData())
     }
 }
 
