@@ -9,7 +9,7 @@ We have designed and developed a business application of CRUD type, three levels
 
 ## Overview
 
-The Expenses frontend is built using React. It interacts with the backend API built with .NET Core to provide users with seamless functionality for managing their expenses.
+The Expenses frontend is built using React - Redux. It interacts with the backend API built with .NET Core to provide users with seamless functionality for managing their expenses.
 You can sign up as a new user, or you can even sign in with your Google Account.
 
 ## A. Development Methodology
@@ -24,12 +24,13 @@ The constraints we follow are
 (a) The front-end will communicate with the business logic using RESTful web services
 (b) The business logic is based on an object-oriented language programming language
 (c) The database must be relational and
-(d) The business logic must communicate with the database via ORM.
+(d) The business logic must communicate with the database via ORM (Entity Framework) in our case.
 
 
 ## Technologies Used
 
 * React
+* Redux (for managing state)
 * React Router
 * Axios (for making API requests)
 
