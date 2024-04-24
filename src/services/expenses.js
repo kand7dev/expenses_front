@@ -30,7 +30,8 @@ export const GetExpenses = async (dispatch) => {
     // dispatch is used to trigger a state change. expenses[] will be stored in our state afte dispatch.
     const { data } = await axiosInstance.get();
     dispatch(setExpenses(data));
-  } catch {
+  } catch (error) {
+    console.log(error.response.data)
     dispatch(setExpensesError())
   }
 };
@@ -42,7 +43,8 @@ export const NewExpense = async (dispatch, expense) => {
     // dispatch is used to trigger a state change. expenses[] will be stored in our state afte dispatch.
     const { data } = await axiosInstance.post("", expense);
     dispatch(newExpense(data));
-  } catch {
+  } catch (error) {
+    console.log(error.response.data)
     dispatch(newExpenseError())
   }
 };
@@ -53,6 +55,7 @@ export const EditExpense = async (dispatch, expense) => {
     await axiosInstance.put("", expense);
     dispatch(editExpense(expense));
   } catch (error) {
+    console.log(error.response.data)
     dispatch(editExpenseError())
   }
 };
@@ -63,6 +66,7 @@ export const DeleteExpense = async (dispatch, expense) => {
     await axiosInstance.delete("", { data: { ...expense } });
     dispatch(deleteExpense(expense));
   } catch (error) {
+    console.log(error.response.data)
     dispatch(deleteExpenseError())
   }
 };

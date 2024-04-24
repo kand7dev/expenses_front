@@ -1,4 +1,4 @@
-import { newExpense, editExpense, deleteExpense, setExpensesError, newExpenseError, editExpenseError, deleteExpenseError } from "../app/expensesSlice";
+import { newExpense, editExpense, deleteExpense, setExpensesError, newExpenseError, editExpenseError, deleteExpenseError, alreadyExists } from "../app/expensesSlice";
 import { toast } from "react-toastify";
 
 const ToastMiddleware = () => next => action => {
@@ -23,6 +23,9 @@ const ToastMiddleware = () => next => action => {
             break;
         case deleteExpenseError.type:
             toast.error("Error deleting expense!")
+            break;
+        case alreadyExists.type:
+            toast.error("User already exists!");
             break;
         default:
             break;

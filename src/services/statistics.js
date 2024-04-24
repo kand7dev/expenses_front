@@ -15,7 +15,7 @@ export const getExpensesPerCategory = async (dispatch) => {
         const { data } = await axiosInstance.get();
         dispatch(setExpenseAmountPerCategory(data));
     } catch (error) {
-        console.log(error)
+        console.log(error.response.data)
     }
 }
 

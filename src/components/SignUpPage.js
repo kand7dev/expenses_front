@@ -3,7 +3,7 @@ import { FormControl, InputGroup, Form, Button } from "react-bootstrap"
 import { SignUp } from "../services/authentication";
 import { useDispatch } from "react-redux";
 import ThirdPartySignIns from "./ThirdPartySignIns"
-
+import { ToastContainer } from "react-toastify";
 
 
 const SignUpPage = () => {
@@ -13,7 +13,8 @@ const SignUpPage = () => {
     const [confirmPassword, setConfirmPassword] = useState("");
     const dispatch = useDispatch();
 
-    return <div style={{ width: "30rem", margin: "auto", paddingTop: "8px" }}>
+    return (<div style={{ width: "30rem", margin: "auto", paddingTop: "8px" }}>
+        <ToastContainer />
         <Form onSubmit={event => {
             event.preventDefault();
             SignUp(dispatch, { username, email, password })
@@ -34,7 +35,7 @@ const SignUpPage = () => {
             <Button type="submit" variant="success" style={{ margin: "auto", display: "block", width: "10rem" }} disabled={password !== confirmPassword || password.length <= 0} >Sign Up</Button>
         </Form>
         <ThirdPartySignIns />
-    </div >
+    </div >)
 };
 
 export default SignUpPage;
