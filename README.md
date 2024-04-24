@@ -2,11 +2,15 @@
 
 This is an Expenses application created by me, grandvx and Antonisvar for a university project in the course of Special Topics in Software Engineering.
    
-## Description:
+## Description
 
 This repository contains the frontend code for the Expenses application, a full-stack React and .NET application designed to help users keep track of their expenses.
 We have designed and developed a business application of CRUD type, three levels (front-end, business logic, database) on a small scale. By "small scale" we mean that it is not necessary to deal with all possible functions of such an application but to select 3-4 of those that are important. The aim of the task is not only the software to be produced but also the development methodology.
 
+## Overview
+
+The Expenses frontend is built using React. It interacts with the backend API built with .NET Core to provide users with seamless functionality for managing their expenses.
+You can sign up as a new user, or you can even sign in with your Google Account.
 
 ## A. Development Methodology
 
