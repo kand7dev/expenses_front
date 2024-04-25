@@ -9,6 +9,11 @@ const ExpenseForm = ({ expense, setIsEditing }) => {
     "Rent",
     "Utilities",
     "Entertainment",
+    "Transportation",
+    "Dining Out",
+    "Subscriptions and Memberships",
+    "Savings and Investments",
+    "Travel",
     "Other",
   ];
   const [amount, setAmount] = useState(0);
