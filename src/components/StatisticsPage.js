@@ -42,8 +42,8 @@ const StatisticsPage = () => {
             ]
         }]
     };
-    return <div hidden={!expenseAmountPerCategory || !expenseAmountPerCategory.length} style={{ maxWidth: "35rem", maxHeight: "35rem", margin: "auto", textAlign: "center" }}>
-        <h4 style={{ marginTop: "10px" }}>Expenses per Caregory</h4>
+    return <div hidden={!expenseAmountPerCategory || !expenseAmountPerCategory.length} style={{ maxWidth: "35rem", maxHeight: "35rem", margin: "auto", textAlign: "center" }} >
+        <h4 style={{ marginTop: "10px", fontFamily: "Satisfy" }}>Expenses per Caregory</h4>
         <Doughnut data={data} />
     </div >
 };

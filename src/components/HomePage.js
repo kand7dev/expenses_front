@@ -3,7 +3,7 @@ import ExpenseForm from "./ExpenseForm";
 import { ToastContainer } from "react-toastify";
 
 const HomePage = () => (
-    <div style={{ width: "60%", margin: "auto" }}>
+    <div style={{ width: "60%", margin: "auto", fontFamily: "Montserrat" }}>
         <ToastContainer />
         <h3>New Expense</h3>
         <ExpenseForm />
